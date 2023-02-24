@@ -1,0 +1,164 @@
+<html>
+
+<head>
+
+  <script type="text/javascript">
+    var nifty50 = [
+      'ADANIENT'
+      , 'ADANIPORTS'
+      , 'APOLLOHOSP'
+      , 'ASIANPAINT'
+      , 'AXISBANK'
+      , 'BAJAJ-AUTO'
+      , 'BAJFINANCE'
+      , 'BAJAJFINSV'
+      , 'BPCL'
+      , 'BHARTIARTL'
+      , 'BRITANNIA'
+      , 'CIPLA'
+      , 'COALINDIA'
+      , 'DIVISLAB'
+      , 'DRREDDY'
+      , 'EICHERMOT'
+      , 'GRASIM'
+      , 'HCLTECH'
+      , 'HDFCBANK'
+      , 'HDFCLIFE'
+      , 'HEROMOTOCO'
+      , 'HINDALCO'
+      , 'HINDUNILVR'
+      , 'HDFC'
+      , 'ICICIBANK'
+      , 'ITC'
+      , 'INDUSINDBK'
+      , 'INFY'
+      , 'JSWSTEEL'
+      , 'KOTAKBANK'
+      , 'LT'
+      , 'M&M'
+      , 'MARUTI'
+      , 'NTPC'
+      , 'NESTLEIND'
+      , 'ONGC'
+      , 'POWERGRID'
+      , 'RELIANCE'
+      , 'SBILIFE'
+      , 'SBIN'
+      , 'SUNPHARMA'
+      , 'TCS'
+      , 'TATACONSUM'
+      , 'TATAMOTORS'
+      , 'TATASTEEL'
+      , 'TECHM'
+      , 'TITAN'
+      , 'UPL'
+      , 'ULTRACEMCO'
+      , 'WIPRO'
+
+    ];
+
+    var niftynext50 = [
+      'ACC'
+      , 'ADANIGREEN'
+      , 'ATGL'
+      , 'ADANITRANS'
+      , 'AMBUJACEM'
+      , 'DMART'
+      , 'BAJAJHLDNG'
+      , 'BANDHANBNK'
+      , 'BANKBARODA'
+      , 'BERGEPAINT'
+      , 'BEL'
+      , 'BIOCON'
+      , 'BOSCHLTD'
+      , 'CHOLAFIN'
+      , 'COLPAL'
+      , 'DLF'
+      , 'DABUR'
+      , 'NYKAA'
+      , 'GAIL'
+      , 'GLAND'
+      , 'GODREJCP'
+      , 'HDFCAMC'
+      , 'HAVELLS'
+      , 'HAL'
+      , 'ICICIGI'
+      , 'ICICIPRULI'
+      , 'IOC'
+      , 'IRCTC'
+      , 'INDUSTOWER'
+      , 'NAUKRI'
+      , 'INDIGO'
+      , 'LTIM'
+      , 'LICI'
+      , 'MARICO'
+      , 'MPHASIS'
+      , 'MUTHOOTFIN'
+      , 'PAYTM'
+      , 'PIIND'
+      , 'PIDILITIND'
+      , 'PGHH'
+      , 'SBICARD'
+      , 'SRF'
+      , 'MOTHERSON'
+      , 'SHREECEM'
+      , 'SIEMENS'
+      , 'TATAPOWER'
+      , 'TORNTPHARM'
+      , 'MCDOWELL-N'
+      , 'VEDL'
+      , 'ZOMATO'
+
+    ];
+
+    var cur_index = 0;
+    var cur_arr = [];
+
+
+    function myFunction(index, arr) {
+      var f1 = document.getElementById("frame1");
+      var src1 = "https://www.bing.com/search?q=NSE%3A" + arr[index];
+      console.log(src1)
+      f1.src = src1;
+    }
+
+
+    function doWork() {
+      console.log(cur_index);
+      if (cur_index != null && cur_arr != null && cur_arr.length > cur_index) {
+        myFunction(cur_index, cur_arr);
+      }
+      cur_index++;
+    }
+
+
+
+    function AutomateFrameLoad(queryType) {
+      console.log("loaded");
+      if (queryType == "nifty50") {
+        cur_arr = nifty50;
+      }
+      if (queryType == "niftynext50") {
+        cur_arr = niftynext50;
+      }
+
+      setInterval(doWork, 6000);
+    }
+
+
+
+  </script>
+</head>
+
+<body>
+  <iframe id="frame1" src="https://www.bing.com/search?q=NSE%3AIRFC" width="500" height="300"></iframe>
+
+  <form method="post">
+    <input type="button" value="Nifty 50" onclick="AutomateFrameLoad('nifty50')" />
+
+    <input type="button" value="Nifty Next 50" onclick="AutomateFrameLoad('niftynext50')" />
+
+  </form>
+</body>
+
+</html>
